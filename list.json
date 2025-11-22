@@ -3,5 +3,6 @@
       "meta": "https://raw.githubusercontent.com/tappen-1/ioBroker.charge-amps-luna/main/io-package.json",
       "icon": "https://raw.githubusercontent.com/tappen-1/ioBroker.charge-amps-luna/main/admin/charge-amps.png",
       "version": "0.1.0"
+      "url": "https://github.com/tappen-1/ioBroker.charge-amps-luna/tarball/main"
     }
   }
