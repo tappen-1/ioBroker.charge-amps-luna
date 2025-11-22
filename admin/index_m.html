@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <!-- Load ioBroker scripts and styles-->
+    <link rel="stylesheet" type="text/css" href="../../css/adapter.css" />
+    <link rel="stylesheet" type="text/css" href="../../lib/css/materialize.css">
+
+    <script type="text/javascript" src="../../lib/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="../../js/translate.js"></script>
+    <script type="text/javascript" src="../../lib/js/materialize.js"></script>
+    <script type="text/javascript" src="../../js/adapter-settings.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="index_m.js"></script>
+</head>
+
+<body>
+    <div class="m adapter-container">
+        <div class="row">
+            <div class="col s12">
+                <h3>Charge Amps Luna Configuration</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">API Credentials</span>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" id="apiUsername" class="value" data-setting="apiUsername">
+                                <label for="apiUsername" class="translate">API Username</label>
+                                <span class="helper-text">Your Charge Amps email address</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="password" id="apiPassword" class="value" data-setting="apiPassword">
+                                <label for="apiPassword" class="translate">API Password</label>
+                                <span class="helper-text">Your Charge Amps password</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" id="chargePointId" class="value" data-setting="chargePointId">
+                                <label for="chargePointId" class="translate">Charge Point ID</label>
+                                <span class="helper-text">Your Luna wallbox ID from Charge Amps dashboard</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="number" id="pollInterval" class="value" data-setting="pollInterval" min="10" max="300" value="30">
+                                <label for="pollInterval" class="translate">Poll Interval (seconds)</label>
+                                <span class="helper-text">How often to update data (10-300 seconds, default: 30)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Information</span>
+                        <p>This adapter integrates your Charge Amps Luna wallbox with ioBroker.</p>
+
+                        <h5>Features:</h5>
+                        <ul>
+                            <li>Real-time status monitoring</li>
+                            <li>Remote start/stop charging</li>
+                            <li>Current limiting (6-32A)</li>
+                            <li>Power and energy tracking</li>
+                        </ul>
+
+                        <h5>Getting your Charge Point ID:</h5>
+                        <ol>
+                            <li>Log in to <a href="https://dashboard.charge.space/" target="_blank">Charge Amps Dashboard</a></li>
+                            <li>Go to your Luna wallbox settings</li>
+                            <li>Find the Charge Point ID</li>
+                            <li>Copy it here</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

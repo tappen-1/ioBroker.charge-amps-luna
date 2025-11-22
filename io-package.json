@@ -1,0 +1,225 @@
+{
+  "common": {
+    "name": "charge-amps-luna",
+    "version": "0.1.0",
+    "news": {
+      "0.1.0": {
+        "en": "Initial release - Charge Amps Luna integration",
+        "de": "Erste Version - Charge Amps Luna Integration"
+      }
+    },
+    "titleLang": {
+      "en": "Charge Amps Luna wallbox integration",
+      "de": "Charge Amps Luna Wallbox Integration"
+    },
+    "desc": {
+      "en": "ioBroker adapter for Charge Amps Luna wallbox",
+      "de": "ioBroker Adapter für Charge Amps Luna Wallbox"
+    },
+    "authors": ["Your Name <your.email@example.com>"],
+    "keywords": ["wallbox", "charge-amps", "luna", "ev-charging"],
+    "licenseInformation": { "license": "MIT", "type": "free", "link": "https://opensource.org/licenses/MIT" },
+    "platform": "Javascript/Node.js",
+    "icon": "admin/charge-amps.png",
+    "enabled": true,
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "vehicle",
+    "compact": true,
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "materialize": true,
+    "dependencies": [
+      {
+        "js-controller": ">=5.0.19"
+      }
+    ],
+    "adminUI": {
+      "config": "materialize"
+    }
+  },
+  "native": {
+    "apiUsername": "",
+    "apiPassword": "",
+    "chargePointId": "",
+    "pollInterval": 30
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Connection status",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "chargepoint",
+      "type": "channel",
+      "common": {
+        "name": "Charge Point",
+        "role": "",
+        "icon": "",
+        "desc": "Charge Point data"
+      }
+    },
+    {
+      "_id": "chargepoint.id",
+      "type": "state",
+      "common": {
+        "name": "Charge Point ID",
+        "type": "string",
+        "role": "info.name",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "chargepoint.name",
+      "type": "state",
+      "common": {
+        "name": "Charge Point Name",
+        "type": "string",
+        "role": "info.name",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "chargepoint.connected",
+      "type": "state",
+      "common": {
+        "name": "Connected",
+        "type": "boolean",
+        "role": "indicator.connected",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "chargepoint.charging.active",
+      "type": "state",
+      "common": {
+        "name": "Charging Active",
+        "type": "boolean",
+        "role": "indicator.state",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "chargepoint.charging.start",
+      "type": "state",
+      "common": {
+        "name": "Start Charging",
+        "type": "boolean",
+        "role": "button.start",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "chargepoint.charging.stop",
+      "type": "state",
+      "common": {
+        "name": "Stop Charging",
+        "type": "boolean",
+        "role": "button.stop",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "chargepoint.power.voltage",
+      "type": "state",
+      "common": {
+        "name": "Voltage",
+        "type": "number",
+        "role": "value.voltage",
+        "read": true,
+        "write": false,
+        "unit": "V"
+      },
+      "native": {}
+    },
+    {
+      "_id": "chargepoint.power.current",
+      "type": "state",
+      "common": {
+        "name": "Current",
+        "type": "number",
+        "role": "value.current",
+        "read": true,
+        "write": false,
+        "unit": "A"
+      },
+      "native": {}
+    },
+    {
+      "_id": "chargepoint.power.power",
+      "type": "state",
+      "common": {
+        "name": "Power",
+        "type": "number",
+        "role": "value.power",
+        "read": true,
+        "write": false,
+        "unit": "W"
+      },
+      "native": {}
+    },
+    {
+      "_id": "chargepoint.energy.total",
+      "type": "state",
+      "common": {
+        "name": "Total Energy",
+        "type": "number",
+        "role": "value.energy",
+        "read": true,
+        "write": false,
+        "unit": "kWh"
+      },
+      "native": {}
+    },
+    {
+      "_id": "chargepoint.energy.session",
+      "type": "state",
+      "common": {
+        "name": "Session Energy",
+        "type": "number",
+        "role": "value.energy",
+        "read": true,
+        "write": false,
+        "unit": "kWh"
+      },
+      "native": {}
+    },
+    {
+      "_id": "chargepoint.connector.current",
+      "type": "state",
+      "common": {
+        "name": "Max Current",
+        "type": "number",
+        "role": "value",
+        "read": true,
+        "write": true,
+        "min": 6,
+        "max": 32,
+        "unit": "A"
+      },
+      "native": {}
+    }
+  ]
+}
